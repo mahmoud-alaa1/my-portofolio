@@ -1,13 +1,16 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
-export default function HomePage({ params }: { params: { locale: string } }) {
-  // const { locale } = use(params);
-  console.log("I'm params", params);
-  // // Enable static rendering
-  // setRequestLocale(locale);
-  const t = useTranslations("HomePage");
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  console.log("I'm params ", await params);
+  setRequestLocale(locale);
+  const t = await getTranslations("HomePage");
   return (
     <div>
       <h1>{t("title")}</h1>
