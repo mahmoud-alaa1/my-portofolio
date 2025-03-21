@@ -1,0 +1,10 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "Metadata": {
+    "title": "My awesome website",
+    "description": "This is my awesome website"
+  }
+}
