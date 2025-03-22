@@ -1,4 +1,3 @@
-import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -12,9 +11,8 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("HomePage");
   return (
-    <div>
-      <h1>{t("title")}</h1>
-      <Link href="/about">{t("about")}</Link>
+    <div className="h-[200vh]">
+      <h1 className="text-white">{t("title")}</h1>
     </div>
   );
 }

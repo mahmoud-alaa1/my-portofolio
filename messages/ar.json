@@ -6,5 +6,9 @@
   "Metadata": {
     "title": "My awesome website",
     "description": "This is my awesome website"
+  },
+  "navbar": {
+    "home": "الرئيسية",
+    "about": "عني"
   }
 }
