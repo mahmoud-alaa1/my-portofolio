@@ -10,16 +10,15 @@ const links = [
   { href: "#contact", label: "Contact" },
 ];
 
-import ToggleButton from "./ui/ToggleButton";
-
 export default function Navbar() {
   const t = useTranslations("navbar");
   const scrollY = useRef(0);
   useEffect(() => {
+    scrollY.current = window.scrollY;
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       const nav = document.querySelector("nav")!;
-      if (scrollY.current > currentScrollPos) {
+      if (scrollY.current <= currentScrollPos) {
         nav.classList.add("-translate-y-50");
       } else {
         nav.classList.remove("-translate-y-50");
